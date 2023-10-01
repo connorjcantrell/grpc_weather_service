@@ -1,0 +1,33 @@
+// weather.proto
+
+syntax = "proto3";
+
+package weather;
+
+service WeatherService {
+    // RPC to fetch the current weather data based on provided latitude and longitude.
+    rpc GetCurrentWeather(WeatherRequest) returns (CurrentWeatherResponse) {}
+}
+
+message WeatherRequest {
+    string latitude = 1;
+    string longitude = 2;
+}
+
+message CurrentWeatherResponse {
+    int32 dt = 1;
+    int32 sunrise = 2;
+    int32 sunset = 3;
+    float temperature = 4;
+    float feels_like = 5;
+    int32 pressure = 6;
+    int32 humidity = 7;
+    float dew_point = 8;
+    float uv_index = 9;
+    int32 clouds = 10;
+    int32 visibility = 11;
+    float wind_speed = 12;
+    int32 wind_degree = 13;
+    float wind_gust = 14;
+}
+
